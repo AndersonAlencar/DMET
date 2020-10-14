@@ -127,14 +127,6 @@ class CatalogTableViewCell: UITableViewCell {
         
     }
     
-//    @objc func seeAllArt(sender: UIButton!) {
-//        let departmentArtsVC = DepartmentArtsViewController()
-//        departmentArtsVC.objets = self.artObjects
-//        departmentArtsVC.images = images
-//        navigationController?.pushViewController(departmentArtsVC, animated: true)
-//
-//    }
-    
     func setupCollectionView() {
         
         collectionView.showsHorizontalScrollIndicator = false
@@ -172,16 +164,12 @@ class CatalogTableViewCell: UITableViewCell {
         sectionTitle.translatesAutoresizingMaskIntoConstraints = false
         sectionTitle.topAnchor.constraint(equalTo: sectionNumber.bottomAnchor, constant: 1).isActive = true
         sectionTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
-        //sectionTitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 4).isActive = true
     }
     
     func setSeeAllContraint() {
         
         seeAll.translatesAutoresizingMaskIntoConstraints = false
-        seeAll.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
-        seeAll.heightAnchor.constraint(equalToConstant: 4).isActive = true
-        seeAll.centerYAnchor.constraint(equalTo: sectionTitle.centerYAnchor).isActive = true
-        
+        NSLayoutConstraint.activateConstraints([seeAll.centerYAnchor.constraint(equalTo: sectionTitle.centerYAnchor),seeAll.heightAnchor.constraint(equalToConstant: 4),seeAll.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)])
     }
     
     func setLineConstraint() {
